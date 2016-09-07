@@ -1,0 +1,2 @@
+Binds model to variable ('stats') in the current view
+@inject('stats', 'App\Stats')
