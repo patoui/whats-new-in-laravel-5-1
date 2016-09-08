@@ -1,0 +1,4 @@
+Allows for the use of ES2015 or ECMAScript 6 to be converted to ES5
+elixir(mix => {
+    mix.rollup(['one.js', 'two.js']);
+});
