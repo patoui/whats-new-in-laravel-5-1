@@ -1,0 +1,7 @@
+Factories can be used to populate local database with test data and for unit testing
+$factory->define(App\Post::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+    ];
+});

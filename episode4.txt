@@ -1,0 +1,2 @@
+Running `gulp tdd` with the line below added to gulpfile will notify you everytime a test is changed whether it's passing or failing
+mix.phpUnit()

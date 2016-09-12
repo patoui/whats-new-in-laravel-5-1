@@ -85,6 +85,13 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                <div class="container">
+                    <form method="POST" action="/search-results">
+                        {{ csrf_field() }}
+                        <input id="search" name="search"></input>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
                 @include('stats')
             </div>
         </div>

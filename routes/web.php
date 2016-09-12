@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::get('/other', function () {
     return view('other');
 });
+
+Route::post('search-results', function () {
+    return sprintf('Search results for "%s"', Request::input('search'));
+});
+
+Route::get('posts', function () {
+    return view('posts')->with('posts', App\Post::all());
+});

@@ -1,11 +1,13 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
+use App\Post;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class ExampleTest extends TestCase
 {
+    use DatabaseMigrations;
     /**
      * A basic functional test example.
      *
@@ -14,6 +16,16 @@ class ExampleTest extends TestCase
     public function testBasicExample()
     {
         $this->visit('/')
-             ->see('Laravel');
+            ->type('some query', '#search')
+            ->press('Search')
+            ->see('Search results for "some query"');
+    }
+
+    public function testBasicExample2()
+    {
+        $post = factory(Post::class)->create();
+
+        $this->visit('posts')
+            ->see($post->title);
     }
 }

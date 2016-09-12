@@ -20,9 +20,6 @@ require('laravel-elixir-vue');
 
 elixir(mix => {
     mix.rollup(['one.js', 'two.js']);
-});
-
-
-elixir(mix => {
     mix.less(['app.less', 'other.less']);
+    mix.phpUnit();
 });
