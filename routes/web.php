@@ -11,6 +11,8 @@
 |
 */
 
+event(new App\Events\UserHasRegistered);
+
 Route::get('/', function () {
     return view('welcome');
 });
