@@ -38,3 +38,21 @@ Route::get(
         }
     ]
 );
+
+Route::group(
+    [
+        'prefix' => 'admin',
+        'as' => 'admin.'
+    ],
+    function () {
+        Route::get(
+            'home',
+            [
+                'as' => 'home',
+                function () {
+                    return 'some view';
+                }
+            ]
+        );
+    }
+);

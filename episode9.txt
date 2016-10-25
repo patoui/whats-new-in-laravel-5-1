@@ -1,0 +1,11 @@
+Middleware route parameters
+public function handle($request, Closure $next, $adminName)
+Route::get(
+    'admin',
+    [
+        'middleware' => 'admin:PatriqueOuimet',
+        function () {
+            return 'Hello Patrique';
+        }
+    ]
+);
