@@ -13,19 +13,28 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicExample()
-    {
-        $this->visit('/')
-            ->type('some query', '#search')
-            ->press('Search')
-            ->see('Search results for "some query"');
-    }
+    // public function testBasicExample()
+    // {
+    //     $this->visit('/')
+    //         ->type('some query', '#search')
+    //         ->press('Search')
+    //         ->see('Search results for "some query"');
+    // }
 
-    public function testBasicExample2()
-    {
-        $post = factory(Post::class)->create();
+    // public function testBasicExample2()
+    // {
+    //     $post = factory(Post::class)->create();
 
-        $this->visit('posts')
-            ->see($post->title);
+    //     $this->visit('posts')
+    //         ->see($post->title);
+    // }
+
+    public function testAdminOnly()
+    {
+        $pat = factory('App\User')->create(['name' => 'PatriqueOuimet']);
+
+        $this->actingAs($pat)
+            ->visit('admin')
+            ->see('Hello Patrique');
     }
 }

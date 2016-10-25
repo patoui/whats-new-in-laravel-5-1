@@ -11,7 +11,7 @@
 |
 */
 
-event(new App\Events\UserHasRegistered);
+// event(new App\Events\UserHasRegistered);
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,3 +28,13 @@ Route::post('search-results', function () {
 Route::get('posts', function () {
     return view('posts')->with('posts', App\Post::all());
 });
+
+Route::get(
+    'admin',
+    [
+        'middleware' => 'admin:PatriqueOuimet',
+        function () {
+            return 'Hello Patrique';
+        }
+    ]
+);
